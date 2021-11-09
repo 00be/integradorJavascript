@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
+    <title>JS Integrador</title>
+</head>
+<body onload="cerrarAlerta()">
+    <header class=" container-fluid">
+
+        <nav class="navbar  navbar-dark bg-dark ">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"> </a>
+                <a class="nav-link text-white " href="../integradorBootstrap/index.html">Conf BS As</a>
+                <a class="nav-link" href=""></a>
+                <a class="nav-link text-white-40 " href="../integradorBootstrap/index.html">La conferencia</a>
+                <a class="nav-link text-white-40" href="../integradorBootstrap/index.html#oradores">Los oradores</a>
+                <a class="nav-link text-white-40" href="../integradorBootstrap/index.html#evento">El lugar y fecha</a>
+                <a class="nav-link text-white-40" href="../integradorBootstrap/index.html#orador">Conviertete en orador</a>
+                <a class="nav-link text-success" href="#">Comprar ticket</a>
+            </div>
+        </nav>
+    </header>
+        <article class="container-sm d-flex justify-content-center" >
+            <div onclick="estudiante()" class="container-sm d-inline-flex card border-primary mb-3 align-items-center tarjeta" style="max-width: 18rem;">
+                <div class="card-body ">
+                  <h5 class="card-title text-center">Estudiante</h5>
+                  <p class="card-text text-center">Tienen un descuento <br></p>
+                  <h5 class="card-title text-center">80% <br></h5>
+                  <p class="card-text text-muted text-center">*presentar documentación <br></p>
+            </div>
+        </div>
+                <div onclick="trainer()" class="container-sm d-inline-flex card border-success mb-3 align-items-center tarjeta " style="max-width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title text-center tarjeta">Trainee</h5>
+                      <p class="card-text text-center">Tienen un descuento <br></p>
+                      <h5 class="card-title text-center">50% <br></h5>
+                      <p class="card-text text-muted text-center">*presentar documentación <br></p>
+                </div>
+            </div>
+            <div onclick="junior()" class="container-sm d-inline-flex card border-warning mb-3 align-items-center tarjeta" style="max-width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Junior</h5>
+                  <p class="card-text text-center">Tienen un descuento <br></p>
+                  <h5 class="card-title text-center">15% <br></h5>
+                  <p class="card-text text-muted text-center">*presentar documentación <br></p>
+            </div>
+        </div>
+
+      </article>
+      <div class="container-fluid alert alert-danger" id="alertError" role="alert" onclick="cerrarAlerta()"> 
+        este es el error
+      </div>
+
+      <form class="container-fluid">
+          <div class="container-fluid text-center">
+              <p class="align-center">VENTA</p>
+              <h3 class="align-center"></h3>
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control" id="nombre" placeholder="Nombre" aria-label="Nommbre" >
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" id="apellido" placeholder="Apellido" aria-label="Apellido">
+                </div>
+                <div class="col-12 padding-superior">
+                    <input type="email" class="form-control" id="mail" placeholder="Correo" onchange="ver()">
+                </div>
+                </div>
+
+                <div class="  row padding-superior">
+                <label  class=" col form-label">Cantidad</label>
+                <label  class=" col form-label">Categoria</label>
+                 </div>
+                 <div class="row ">
+                     <div class="col">
+                <input type="number"  min="1" max="100" class="form-control " id="cantidad" placeholder= "Cantidad"  aria-label="Cantidad" onchange="validarCantidad()">
+            </div>
+            <div class="col">
+                <select class=" form-select" id="descuento" aria-label="Default select example">
+                    <option value="1">Estudiante</option>
+                    <option value="2">Trainee</option>
+                    <option value="3">Junior</option>
+                  </select>
+                </div>
+      </div>
+
+</button>
+      <div class="alert alert-primary padding-superior" id="mensajePagar" role="alert">
+        Total a Pagar <b>$ 0
+      </div>
+            <div class="row padding-superior">
+
+                <div class="col d-grid">
+                    <button type="button" class="btn btn-success" onclick="window.location.reload(true)">Limpiar</button>
+                </div>
+                <div class="col d-grid">
+                    <button type="button" class="btn btn-success" onclick="Cantidad()">Enviar</button>
+                </div>
+
+
+            </div>
+            </div>
+
+</div>
+      </form>
+
+
+      <footer class=" container-fluid padding-superior ">
+
+        <div class="cç bg-primary-2 text-white row">
+       <div class="container-fluid col align-self-center text-white"> 
+       <a class="text-light nav-link bg-primary-2" href="#">Preguntas Frecuentes</a>
+       </div>
+       
+       <div class="  col"> 
+         <a class="text-light nav-link bg-primary-2" href="#">Contáctanos</a>
+         </div>
+       
+         <div class="col "> 
+           <a class="text-light nav-link bg-primary-2" href="#">Prensa</a>
+           </div>
+       
+           <div class="col "> 
+             <a class="text-light nav-link bg-primary-2" href="../integradorBootstrap/index.html#carouselExampleCaptions">Conferencias</a>
+             </div>
+       
+             <div class="col"> 
+               <a class="text-light nav-link bg-primary-2" href="#">Términos y Condiciones</a>
+               </div>
+       
+               <div class="col"> 
+                 <a class="text-light nav-link bg-primary-2" href="#">Privacidad</a>
+                 </div>
+       
+                 <div class="col"> 
+                   <a class="text-light nav-link bg-primary-2" href="#">Estudiantes</a>
+                   </div>
+       
+        </div> 
+        
+       
+       </footer>
+       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+       <script src="dom.js"></script>
+      </body>
+</html>
